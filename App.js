@@ -1,21 +1,63 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { View, Text, Button } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
 
-export default function App() {
+const HomeScreen = ({ navigation }) => (
+  <View>
+    <Text>Home Screen</Text>
+    <Button
+      title="Go to Grounding"
+      onPress={() => navigation.navigate('Grounding')}
+    />
+    <Button
+      title="Go to Deep Breathing"
+      onPress={() => navigation.navigate('Deep Breathing')}
+    />
+    <Button
+      title="Go to Resources"
+      onPress={() => navigation.navigate('Resources')}
+    />
+  </View>
+)
+
+const GroundingScreen = ({ navigation }) => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View>
+      <Text>Grounding Screen</Text>
     </View>
-  );
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const DeepBreathingScreen = ({ navigation }) => {
+  return (
+    <View>
+      <Text>Deep Breathing Screen</Text>
+    </View>
+  )
+}
+
+const ResourcesScreen = ({ navigation }) => {
+  return (
+    <View>
+      <Text>Resources Screen</Text>
+    </View>
+  )
+}
+
+const Stack = createStackNavigator();
+
+export default function App() {
+
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Grounding" component={GroundingScreen} />
+        <Stack.Screen name="Deep Breathing" component={DeepBreathingScreen} />
+        <Stack.Screen name="Resources" component={ResourcesScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
+}
+
