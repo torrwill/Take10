@@ -3,6 +3,9 @@
 
 *Take10 is a mobile app dedicated to helping people with anxiety. It includes deep breathing and grounding exercises as well as a list of resources for receiving counseling and gaining coping skills.*
 
+# Installation and Usage
+Clone git repo and run the application on your device or a mobile application emulator.
+
 ### Inspiration
 Each individual member of this group has experience dealing with anxiety in their personal lives or with those around them. Knowing how this experience can affect a person, the objective of this project was to create a safe space where its users could momentarily escape the world around them and ground themselves in the here and now.
 
